@@ -36,11 +36,6 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
         
         _touchesToLayers = CFDictionaryCreateMutable(NULL, 0, (void *)NULL, (void *)NULL);
  
-        // TODO - this mimics the same default values as a BTSMagicOptions object.
-        _layerContent = (id)[UIImage imageNamed:@"star.png"].CGImage;
-        _emitterInstanceCount = 100;
-        _animationDuration = 1.0;
-        _rotationConstant = 4.0;
         
         [self setBackgroundColor:[UIColor blackColor]];
         [self setUserInteractionEnabled:YES];
@@ -74,6 +69,8 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
     for (UITouch *touch in touches) {
         CGPoint point = [touch locationInView:self];
 
+        NSLog(@"%d, %f, %d", _emitterInstanceCount,_animationDuration, _rotationConstant);
+        
         CAReplicatorLayer *touchLayer = [[[CAReplicatorLayer alloc] init] autorelease];
         [touchLayer setFrame:CGRectMake(point.x - 5, point.y - 5, 10, 10)];
         [touchLayer setBackgroundColor:[UIColor clearColor].CGColor];

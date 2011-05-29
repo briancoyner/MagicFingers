@@ -61,9 +61,9 @@ static void *kRotationConstantContextKey = &kRotationConstantContextKey;
     BTSMagicFingerView *magicView = (BTSMagicFingerView *)[[self view] viewWithTag:100];
 
     // set the view's values based on the "model".
-    [magicView setRotationConstant:[_magicOptions rotationConstant]];
     [magicView setEmitterInstanceCount:[_magicOptions emitterInstanceCount]];
-    [magicView setRotationConstant:[_magicOptions animationDuration]];
+    [magicView setAnimationDuration:[_magicOptions animationDuration]];
+    [magicView setRotationConstant:[_magicOptions rotationConstant]];
     [magicView setLayerContent:[_magicOptions layerContent]];    
 }
 

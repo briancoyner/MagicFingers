@@ -24,7 +24,7 @@ NSString *BTSMagicOptionsRotationConstantKey = @"rotationConstant";
     self = [super init];
     if (self) {
         _layerContent = (id)[UIImage imageNamed:@"star.png"].CGImage;
-        _emitterInstanceCount = 100;
+        _emitterInstanceCount = 70;
         _animationDuration = 1.0;
         _rotationConstant = 4;
     }
