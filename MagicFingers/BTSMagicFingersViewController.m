@@ -86,6 +86,7 @@ static void *kRotationConstantContextKey = &kRotationConstantContextKey;
     
     if (context == kEmitterInstanceContextKey || context == kAnimationDurationContextKey || context == kRotationConstantContextKey) {
         
+        // The BTSMagicFingersViewController sets the tag value.
         BTSMagicFingerView *magicView = (BTSMagicFingerView *)[[self view] viewWithTag:100];
         
         // sync the BTSMagicFingerView with the BTSMagicOptions model object.
