@@ -69,8 +69,6 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
     for (UITouch *touch in touches) {
         CGPoint point = [touch locationInView:self];
 
-        NSLog(@"%d, %f, %d", _emitterInstanceCount,_animationDuration, _rotationConstant);
-        
         CAReplicatorLayer *touchLayer = [[[CAReplicatorLayer alloc] init] autorelease];
         [touchLayer setFrame:CGRectMake(point.x - 5, point.y - 5, 10, 10)];
         [touchLayer setBackgroundColor:[UIColor clearColor].CGColor];
