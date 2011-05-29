@@ -1,9 +1,10 @@
 //
 //  main.m
+//  
 //  MagicFingers
 //
 //  Created by Brian Coyner on 5/27/11.
-//  Copyright 2011 Black Software, Inc. All rights reserved.
+//  Copyright 2011 Brian Coyner. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

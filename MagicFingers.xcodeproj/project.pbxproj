@@ -12,10 +12,15 @@
 		5D81374713907EC8007DAE00 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D81374613907EC8007DAE00 /* CoreGraphics.framework */; };
 		5D81374D13907EC8007DAE00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D81374B13907EC8007DAE00 /* InfoPlist.strings */; };
 		5D81375013907EC8007DAE00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81374F13907EC8007DAE00 /* main.m */; };
-		5D81375313907EC8007DAE00 /* MagicFingersAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81375213907EC8007DAE00 /* MagicFingersAppDelegate.m */; };
-		5D81375613907EC8007DAE00 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D81375413907EC8007DAE00 /* MainWindow.xib */; };
-		5D81375913907EC8007DAE00 /* MagicFingersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81375813907EC8007DAE00 /* MagicFingersViewController.m */; };
-		5D81375C13907EC8007DAE00 /* MagicFingersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D81375A13907EC8007DAE00 /* MagicFingersViewController.xib */; };
+		5D81375313907EC8007DAE00 /* BTSMagicFingersAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81375213907EC8007DAE00 /* BTSMagicFingersAppDelegate.m */; };
+		5D81375613907EC8007DAE00 /* BTSMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D81375413907EC8007DAE00 /* BTSMainWindow.xib */; };
+		5D81375913907EC8007DAE00 /* BTSMagicFingersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81375813907EC8007DAE00 /* BTSMagicFingersViewController.m */; };
+		5D81375C13907EC8007DAE00 /* BTSMagicFingersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D81375A13907EC8007DAE00 /* BTSMagicFingersViewController.xib */; };
+		5D81376E1390803B007DAE00 /* BTSMagicFingerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81376D1390803B007DAE00 /* BTSMagicFingerView.m */; };
+		5D81377013908197007DAE00 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D81376F13908197007DAE00 /* QuartzCore.framework */; };
+		5D81377213908564007DAE00 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D81377113908564007DAE00 /* star.png */; };
+		5D81377513908D4B007DAE00 /* BTSOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81377413908D4B007DAE00 /* BTSOptionsTableViewController.m */; };
+		5D81378013908F75007DAE00 /* BTSMagicOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81377F13908F74007DAE00 /* BTSMagicOptions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +28,24 @@
 		5D81374213907EC8007DAE00 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D81374413907EC8007DAE00 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5D81374613907EC8007DAE00 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		5D81374A13907EC8007DAE00 /* MagicFingers-Info.plist */ = {isa = PBXFileReference; path = "MagicFingers-Info.plist"; sourceTree = "<group>"; };
+		5D81374A13907EC8007DAE00 /* MagicFingers-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MagicFingers-Info.plist"; sourceTree = "<group>"; };
 		5D81374C13907EC8007DAE00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5D81374E13907EC8007DAE00 /* MagicFingers-Prefix.pch */ = {isa = PBXFileReference; path = "MagicFingers-Prefix.pch"; sourceTree = "<group>"; };
+		5D81374E13907EC8007DAE00 /* MagicFingers-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MagicFingers-Prefix.pch"; sourceTree = "<group>"; };
 		5D81374F13907EC8007DAE00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5D81375113907EC8007DAE00 /* MagicFingersAppDelegate.h */ = {isa = PBXFileReference; path = MagicFingersAppDelegate.h; sourceTree = "<group>"; };
-		5D81375213907EC8007DAE00 /* MagicFingersAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicFingersAppDelegate.m; sourceTree = "<group>"; };
-		5D81375513907EC8007DAE00 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		5D81375713907EC8007DAE00 /* MagicFingersViewController.h */ = {isa = PBXFileReference; path = MagicFingersViewController.h; sourceTree = "<group>"; };
-		5D81375813907EC8007DAE00 /* MagicFingersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicFingersViewController.m; sourceTree = "<group>"; };
-		5D81375B13907EC8007DAE00 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MagicFingersViewController.xib; sourceTree = "<group>"; };
+		5D81375113907EC8007DAE00 /* BTSMagicFingersAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTSMagicFingersAppDelegate.h; sourceTree = "<group>"; };
+		5D81375213907EC8007DAE00 /* BTSMagicFingersAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSMagicFingersAppDelegate.m; sourceTree = "<group>"; };
+		5D81375513907EC8007DAE00 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BTSMainWindow.xib; sourceTree = "<group>"; };
+		5D81375713907EC8007DAE00 /* BTSMagicFingersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTSMagicFingersViewController.h; sourceTree = "<group>"; };
+		5D81375813907EC8007DAE00 /* BTSMagicFingersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSMagicFingersViewController.m; sourceTree = "<group>"; };
+		5D81375B13907EC8007DAE00 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BTSMagicFingersViewController.xib; sourceTree = "<group>"; };
+		5D81376A1390801D007DAE00 /* BTSMagicFingerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSMagicFingerView.h; sourceTree = "<group>"; };
+		5D81376D1390803B007DAE00 /* BTSMagicFingerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSMagicFingerView.m; sourceTree = "<group>"; };
+		5D81376F13908197007DAE00 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5D81377113908564007DAE00 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		5D81377313908D4B007DAE00 /* BTSOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSOptionsTableViewController.h; sourceTree = "<group>"; };
+		5D81377413908D4B007DAE00 /* BTSOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSOptionsTableViewController.m; sourceTree = "<group>"; };
+		5D81377E13908F74007DAE00 /* BTSMagicOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSMagicOptions.h; sourceTree = "<group>"; };
+		5D81377F13908F74007DAE00 /* BTSMagicOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSMagicOptions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D81377013908197007DAE00 /* QuartzCore.framework in Frameworks */,
 				5D81374313907EC8007DAE00 /* UIKit.framework in Frameworks */,
 				5D81374513907EC8007DAE00 /* Foundation.framework in Frameworks */,
 				5D81374713907EC8007DAE00 /* CoreGraphics.framework in Frameworks */,
@@ -72,6 +86,7 @@
 				5D81374213907EC8007DAE00 /* UIKit.framework */,
 				5D81374413907EC8007DAE00 /* Foundation.framework */,
 				5D81374613907EC8007DAE00 /* CoreGraphics.framework */,
+				5D81376F13908197007DAE00 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -79,12 +94,18 @@
 		5D81374813907EC8007DAE00 /* MagicFingers */ = {
 			isa = PBXGroup;
 			children = (
-				5D81375113907EC8007DAE00 /* MagicFingersAppDelegate.h */,
-				5D81375213907EC8007DAE00 /* MagicFingersAppDelegate.m */,
-				5D81375413907EC8007DAE00 /* MainWindow.xib */,
-				5D81375713907EC8007DAE00 /* MagicFingersViewController.h */,
-				5D81375813907EC8007DAE00 /* MagicFingersViewController.m */,
-				5D81375A13907EC8007DAE00 /* MagicFingersViewController.xib */,
+				5D81375113907EC8007DAE00 /* BTSMagicFingersAppDelegate.h */,
+				5D81375213907EC8007DAE00 /* BTSMagicFingersAppDelegate.m */,
+				5D81375413907EC8007DAE00 /* BTSMainWindow.xib */,
+				5D81375713907EC8007DAE00 /* BTSMagicFingersViewController.h */,
+				5D81375813907EC8007DAE00 /* BTSMagicFingersViewController.m */,
+				5D81375A13907EC8007DAE00 /* BTSMagicFingersViewController.xib */,
+				5D81376A1390801D007DAE00 /* BTSMagicFingerView.h */,
+				5D81376D1390803B007DAE00 /* BTSMagicFingerView.m */,
+				5D81377313908D4B007DAE00 /* BTSOptionsTableViewController.h */,
+				5D81377413908D4B007DAE00 /* BTSOptionsTableViewController.m */,
+				5D81377E13908F74007DAE00 /* BTSMagicOptions.h */,
+				5D81377F13908F74007DAE00 /* BTSMagicOptions.m */,
 				5D81374913907EC8007DAE00 /* Supporting Files */,
 			);
 			path = MagicFingers;
@@ -97,6 +118,7 @@
 				5D81374B13907EC8007DAE00 /* InfoPlist.strings */,
 				5D81374E13907EC8007DAE00 /* MagicFingers-Prefix.pch */,
 				5D81374F13907EC8007DAE00 /* main.m */,
+				5D81377113908564007DAE00 /* star.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,8 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D81374D13907EC8007DAE00 /* InfoPlist.strings in Resources */,
-				5D81375613907EC8007DAE00 /* MainWindow.xib in Resources */,
-				5D81375C13907EC8007DAE00 /* MagicFingersViewController.xib in Resources */,
+				5D81375613907EC8007DAE00 /* BTSMainWindow.xib in Resources */,
+				5D81375C13907EC8007DAE00 /* BTSMagicFingersViewController.xib in Resources */,
+				5D81377213908564007DAE00 /* star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,8 +188,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D81375013907EC8007DAE00 /* main.m in Sources */,
-				5D81375313907EC8007DAE00 /* MagicFingersAppDelegate.m in Sources */,
-				5D81375913907EC8007DAE00 /* MagicFingersViewController.m in Sources */,
+				5D81375313907EC8007DAE00 /* BTSMagicFingersAppDelegate.m in Sources */,
+				5D81375913907EC8007DAE00 /* BTSMagicFingersViewController.m in Sources */,
+				5D81376E1390803B007DAE00 /* BTSMagicFingerView.m in Sources */,
+				5D81377513908D4B007DAE00 /* BTSOptionsTableViewController.m in Sources */,
+				5D81378013908F75007DAE00 /* BTSMagicOptions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,20 +207,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		5D81375413907EC8007DAE00 /* MainWindow.xib */ = {
+		5D81375413907EC8007DAE00 /* BTSMainWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5D81375513907EC8007DAE00 /* en */,
 			);
-			name = MainWindow.xib;
+			name = BTSMainWindow.xib;
 			sourceTree = "<group>";
 		};
-		5D81375A13907EC8007DAE00 /* MagicFingersViewController.xib */ = {
+		5D81375A13907EC8007DAE00 /* BTSMagicFingersViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5D81375B13907EC8007DAE00 /* en */,
 			);
-			name = MagicFingersViewController.xib;
+			name = BTSMagicFingersViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -242,6 +268,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MagicFingers/MagicFingers-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "MagicFingers/MagicFingers-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -255,6 +282,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MagicFingers/MagicFingers-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "MagicFingers/MagicFingers-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
@@ -281,6 +309,7 @@
 				5D81376113907EC8007DAE00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
