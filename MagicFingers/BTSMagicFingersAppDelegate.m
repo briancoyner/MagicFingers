@@ -28,7 +28,7 @@
     // the BTSMagicOptions is owned by the app delegate... it shared with the root view controller who 
     // listens for changes and updates the "magic fingers view".
     self.magicOptions = [[BTSMagicOptions alloc] init];
-    
+       
     self.viewController = [[BTSMagicFingersViewController alloc] initWithMagicOptions:_magicOptions];
     [_window setRootViewController:_viewController];
     [_window makeKeyAndVisible];
