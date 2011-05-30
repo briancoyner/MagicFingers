@@ -21,7 +21,7 @@
 		5D81377213908564007DAE00 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D81377113908564007DAE00 /* star.png */; };
 		5D81377513908D4B007DAE00 /* BTSOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81377413908D4B007DAE00 /* BTSOptionsTableViewController.m */; };
 		5D81378013908F75007DAE00 /* BTSMagicOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D81377F13908F74007DAE00 /* BTSMagicOptions.m */; };
-		5DDDC4D7139349F40025E300 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDC4D6139349F40025E300 /* README.md */; };
+		5DDDC50C139450490025E300 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDC50B139450490025E300 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,7 @@
 		5D81377413908D4B007DAE00 /* BTSOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSOptionsTableViewController.m; sourceTree = "<group>"; };
 		5D81377E13908F74007DAE00 /* BTSMagicOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSMagicOptions.h; sourceTree = "<group>"; };
 		5D81377F13908F74007DAE00 /* BTSMagicOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSMagicOptions.m; sourceTree = "<group>"; };
-		5DDDC4D6139349F40025E300 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		5DDDC50B139450490025E300 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +68,7 @@
 		5D81373313907EC8007DAE00 = {
 			isa = PBXGroup;
 			children = (
+				5DDDC50B139450490025E300 /* README.md */,
 				5D81374813907EC8007DAE00 /* MagicFingers */,
 				5D81374113907EC8007DAE00 /* Frameworks */,
 				5D81373F13907EC8007DAE00 /* Products */,
@@ -109,7 +110,6 @@
 				5D81377E13908F74007DAE00 /* BTSMagicOptions.h */,
 				5D81377F13908F74007DAE00 /* BTSMagicOptions.m */,
 				5D81374913907EC8007DAE00 /* Supporting Files */,
-				5DDDC4D6139349F40025E300 /* README.md */,
 			);
 			path = MagicFingers;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 				5D81375613907EC8007DAE00 /* BTSMainWindow.xib in Resources */,
 				5D81375C13907EC8007DAE00 /* BTSMagicFingersViewController.xib in Resources */,
 				5D81377213908564007DAE00 /* star.png in Resources */,
-				5DDDC4D7139349F40025E300 /* README.md in Resources */,
+				5DDDC50C139450490025E300 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
