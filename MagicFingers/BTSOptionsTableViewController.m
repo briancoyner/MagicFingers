@@ -11,23 +11,18 @@
 
 @interface BTSOptionsTableViewController() {
     NSMutableArray *_tableModel;
-}
-
-@property (nonatomic, retain, readwrite) BTSMagicOptions *magicOptions;
+}    
 
 - (void)emitterInstanceCountChanged:(id)sender;
 - (void)animationDurationChanged:(id)sender;
 - (void)rotationConstantChanged:(id)sender;
-
 - (UISlider *)createSliderWithActionSelector:(SEL)selector minimumValue:(CGFloat)minimumValue maximumValue:(CGFloat)maximumValue initialValue:(CGFloat) initialValue;
-@end
 
+@end
 
 @implementation BTSOptionsTableViewController
 
 @synthesize magicOptions = _magicOptions;
-
-static int kViewTag = 1;
 
 - (id)initWithMagicOptions:(BTSMagicOptions *)magicOptions;
 {
@@ -37,6 +32,9 @@ static int kViewTag = 1;
     }
     return self;
 }
+
+
+static int kViewTag = 1;
 
 - (void)dealloc
 {
@@ -50,8 +48,10 @@ static int kViewTag = 1;
 
 - (void)viewDidLoad
 {
-    _tableModel = [[NSMutableArray alloc] initWithCapacity:3];
+    [super viewDidLoad];
     
+    _tableModel = [[NSMutableArray alloc] initWithCapacity:3];
+
     NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
     
@@ -95,7 +95,7 @@ static int kViewTag = 1;
         [cellObjects release];
     }
 
-    [super viewDidLoad];
+    
 }
 
 - (UISlider *)createSliderWithActionSelector:(SEL)selector minimumValue:(CGFloat)minimumValue maximumValue:(CGFloat)maximumValue initialValue:(CGFloat) initialValue
@@ -210,6 +210,5 @@ static int kViewTag = 1;
     [_magicOptions setRotationConstant:[slider value]];
     [[self tableView] reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:2]] withRowAnimation:UITableViewRowAnimationNone];
 }
-
 
 @end

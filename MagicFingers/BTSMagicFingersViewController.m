@@ -12,7 +12,6 @@
 #import "BTSMagicOptions.h"
 
 @interface BTSMagicFingersViewController() {
-    
     UIPopoverController *_optionsViewController;
 }
 
@@ -61,6 +60,7 @@ static void *kRotationConstantContextKey = &kRotationConstantContextKey;
     BTSMagicFingerView *magicView = (BTSMagicFingerView *)[[self view] viewWithTag:100];
 
     // set the view's values based on the "model".
+    
     [magicView setEmitterInstanceCount:[_magicOptions emitterInstanceCount]];
     [magicView setAnimationDuration:[_magicOptions animationDuration]];
     [magicView setRotationConstant:[_magicOptions rotationConstant]];

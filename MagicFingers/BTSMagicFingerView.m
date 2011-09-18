@@ -33,10 +33,8 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        
         _touchesToLayers = CFDictionaryCreateMutable(NULL, 0, (void *)NULL, (void *)NULL);
  
-        
         [self setBackgroundColor:[UIColor blackColor]];
         [self setUserInteractionEnabled:YES];
         [self setMultipleTouchEnabled:YES];
@@ -116,11 +114,7 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for (UITouch *touch in touches) {
-        CALayer *touchLayer = CFDictionaryGetValue(_touchesToLayers, touch);
-        [touchLayer removeFromSuperlayer];
-        CFDictionaryRemoveValue(_touchesToLayers, touch);
-    }
+    [self touchesCancelled:touches withEvent:event];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
@@ -185,13 +179,10 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
 {
     CABasicAnimation *animation = [CABasicAnimation animation];
     [animation setKeyPath:@"position"];
-    [animation setToValue:[NSValue valueWithCGPoint:CGPointMake(0, 0)]];
+    [animation setToValue:[NSValue valueWithCGPoint:CGPointZero]];
     [animation setDuration:_animationDuration];
-    
     [animation setRepeatCount:MAXFLOAT];
-    
     return animation;
 }
-
 
 @end

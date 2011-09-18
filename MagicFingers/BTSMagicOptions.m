@@ -8,10 +8,10 @@
 
 #import "BTSMagicOptions.h"
 
-NSString *BTSMagicOptionsLayerContentKey = @"layerContent";
-NSString *BTSMagicOptionsEmitterInstanceCountKey = @"emitterInstanceCount";
-NSString *BTSMagicOptionsAnimationDurationKey = @"animationDuration";
-NSString *BTSMagicOptionsRotationConstantKey = @"rotationConstant";
+NSString * const BTSMagicOptionsLayerContentKey = @"layerContent";
+NSString * const BTSMagicOptionsEmitterInstanceCountKey = @"emitterInstanceCount";
+NSString * const BTSMagicOptionsAnimationDurationKey = @"animationDuration";
+NSString * const BTSMagicOptionsRotationConstantKey = @"rotationConstant";
 
 @implementation BTSMagicOptions
 

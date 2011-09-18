@@ -10,9 +10,9 @@
 
 @class BTSMagicOptions;
 
-@interface BTSOptionsTableViewController : UITableViewController
+@interface BTSOptionsTableViewController : UITableViewController 
 
-@property (nonatomic, retain, readonly) BTSMagicOptions *magicOptions;
+@property (nonatomic, retain, readwrite) BTSMagicOptions *magicOptions;
 
 - (id)initWithMagicOptions:(BTSMagicOptions *)magicOptions;
 

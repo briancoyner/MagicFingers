@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BTSMagicFingerView : UIView {
-}
+@interface BTSMagicFingerView : UIView 
 
 @property (nonatomic, retain) id layerContent;
 @property (nonatomic, assign) NSInteger emitterInstanceCount;
