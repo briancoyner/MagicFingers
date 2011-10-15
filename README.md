@@ -3,8 +3,8 @@
 
 ## App Details
 
-The app tracks multiple touches. A CAReplicator spins a star image around each touch. 
-The "options" popover allows the user to manipulate the CAReplicator layer while your 
+The app tracks multiple touches. A CAReplicatorLayer spins a star image around each touch. 
+The "options" popover allows the user to manipulate the CAReplicatorLayer while your 
 fingers are down. 
 
 ## Technologies Used
