@@ -33,7 +33,7 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        _touchesToLayers = CFDictionaryCreateMutable(NULL, 0, (void *)NULL, (void *)NULL);
+        _touchesToLayers = CFDictionaryCreateMutable(NULL, 0, NULL, NULL);
  
         [self setBackgroundColor:[UIColor blackColor]];
         [self setUserInteractionEnabled:YES];
@@ -57,7 +57,6 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
     CFDictionaryRemoveAllValues(_touchesToLayers);
     CFRelease(_touchesToLayers);
     
-    [super dealloc];
 }
 
 #pragma mark - Touch Handling
@@ -67,17 +66,17 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
     for (UITouch *touch in touches) {
         CGPoint point = [touch locationInView:self];
 
-        CAReplicatorLayer *touchLayer = [[[CAReplicatorLayer alloc] init] autorelease];
+        CAReplicatorLayer *touchLayer = [[CAReplicatorLayer alloc] init];
         [touchLayer setFrame:CGRectMake(point.x - 5, point.y - 5, 10, 10)];
         [touchLayer setBackgroundColor:[UIColor clearColor].CGColor];
         [touchLayer setInstanceCount:_emitterInstanceCount];
         [touchLayer setInstanceDelay:_animationDuration / _emitterInstanceCount];
         
-        CATransform3D rotateTransform = CATransform3DMakeRotation(M_PI *_rotationConstant / [touchLayer instanceCount], 0, 0, 1);
+        CATransform3D rotateTransform = CATransform3DMakeRotation(M_PI * _rotationConstant / [touchLayer instanceCount], 0, 0, 1);
         [touchLayer setInstanceTransform:rotateTransform];
         
         [touchLayer setInstanceGreenOffset:-0.5/[touchLayer instanceCount]];
-        [touchLayer setInstanceBlueOffset:-0.9/[touchLayer instanceCount]];
+        [touchLayer setInstanceBlueOffset:-0.2/[touchLayer instanceCount]];
         
         CALayer *shapeLayer = [CALayer layer];
         [shapeLayer setFrame:CGRectMake(75, 75, 16, 16)];
@@ -90,7 +89,7 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
         CALayer *layer = [self layer];
         [layer addSublayer:touchLayer];
 
-         CFDictionarySetValue(_touchesToLayers, touch, touchLayer);
+         CFDictionarySetValue(_touchesToLayers, (__bridge CFTypeRef)touch, (__bridge CFTypeRef)touchLayer);
     }
 }
 
@@ -101,7 +100,7 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
         CGPoint locationInView = [touch locationInView:self];
         CGPoint previousLocationInView = [touch previousLocationInView:self];
 
-        CALayer *touchLayer = (CALayer *)CFDictionaryGetValue(_touchesToLayers, touch);
+        CALayer *touchLayer = (__bridge CALayer *)CFDictionaryGetValue(_touchesToLayers, (__bridge CFTypeRef)touch);
         
         float deltaX = locationInView.x - previousLocationInView.x;
         float deltaY = locationInView.y - previousLocationInView.y;
@@ -120,41 +119,41 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     for (UITouch *touch in touches) {
-        CALayer *touchLayer = CFDictionaryGetValue(_touchesToLayers, touch);
+        CALayer *touchLayer = (__bridge CALayer *)(CFDictionaryGetValue(_touchesToLayers, (__bridge CFTypeRef)touch));
         [touchLayer removeFromSuperlayer];
-        CFDictionaryRemoveValue(_touchesToLayers, touch);
+        CFDictionaryRemoveValue(_touchesToLayers, (__bridge CFTypeRef)touch);
     }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (context == kLayerContentContextKey) {
                 
-        NSMutableDictionary *allTouches = (NSMutableDictionary *)_touchesToLayers;
+        NSMutableDictionary *allTouches = (__bridge NSMutableDictionary *)_touchesToLayers;
         for (UITouch *touch in allTouches) {
-            CAReplicatorLayer *touchLayer = (CAReplicatorLayer *)CFDictionaryGetValue(_touchesToLayers, touch);
+            CAReplicatorLayer *touchLayer = (__bridge CAReplicatorLayer *)CFDictionaryGetValue(_touchesToLayers, (__bridge CFTypeRef)touch);
             CALayer *shapeLayer = [[touchLayer sublayers] objectAtIndex:0];
             [shapeLayer setContents:[self layerContent]];
         }
         
     } else if (context == kEmitterInstanceCountContextKey) {
-        NSMutableDictionary *allTouches = (NSMutableDictionary *)_touchesToLayers;
+        NSMutableDictionary *allTouches = (__bridge NSMutableDictionary *)_touchesToLayers;
         for (UITouch *touch in allTouches) {
-            CAReplicatorLayer *touchLayer = (CAReplicatorLayer *)CFDictionaryGetValue(_touchesToLayers, touch);
+            CAReplicatorLayer *touchLayer = (__bridge CAReplicatorLayer *)CFDictionaryGetValue(_touchesToLayers, (__bridge CFTypeRef)touch);
             [touchLayer setInstanceCount:_emitterInstanceCount];
         }
         
     } else if (context == kRotationConstantContextKey) {
-        NSMutableDictionary *allTouches = (NSMutableDictionary *)_touchesToLayers;
+        NSMutableDictionary *allTouches = (__bridge NSMutableDictionary *)_touchesToLayers;
         for (UITouch *touch in allTouches) {
-            CAReplicatorLayer *touchLayer = (CAReplicatorLayer *)CFDictionaryGetValue(_touchesToLayers, touch);
+            CAReplicatorLayer *touchLayer = (__bridge CAReplicatorLayer *)CFDictionaryGetValue(_touchesToLayers, (__bridge CFTypeRef)touch);
             CATransform3D rotateTransform = CATransform3DMakeRotation(M_PI*_rotationConstant/[touchLayer instanceCount], 0, 0, 1);
             [touchLayer setInstanceTransform:rotateTransform];
         }
         
     } else if (context == kAnimationDurationContextKey) {
-        NSMutableDictionary *allTouches = (NSMutableDictionary *)_touchesToLayers;
+        NSMutableDictionary *allTouches = (__bridge NSMutableDictionary *)_touchesToLayers;
         for (UITouch *touch in allTouches) {
-            CAReplicatorLayer *touchLayer = (CAReplicatorLayer *)CFDictionaryGetValue(_touchesToLayers, touch);
+            CAReplicatorLayer *touchLayer = (__bridge CAReplicatorLayer *)CFDictionaryGetValue(_touchesToLayers, (__bridge CFTypeRef)touch);
             [touchLayer setInstanceDelay:_animationDuration / _emitterInstanceCount];
 
             

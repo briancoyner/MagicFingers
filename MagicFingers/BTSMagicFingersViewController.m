@@ -15,7 +15,7 @@
     UIPopoverController *_optionsViewController;
 }
 
-@property (nonatomic, retain, readwrite) BTSMagicOptions *magicOptions;
+@property (nonatomic, strong, readwrite) BTSMagicOptions *magicOptions;
 
 @end
 
@@ -48,9 +48,7 @@ static void *kRotationConstantContextKey = &kRotationConstantContextKey;
     [_magicOptions removeObserver:self forKeyPath:BTSMagicOptionsAnimationDurationKey];
     [_magicOptions removeObserver:self forKeyPath:BTSMagicOptionsRotationConstantKey];
   
-    [_magicOptions release];
     
-    [super dealloc];
 }
 
 - (void)viewDidLoad
@@ -72,7 +70,6 @@ static void *kRotationConstantContextKey = &kRotationConstantContextKey;
     [super didReceiveMemoryWarning];
     
     if (![_optionsViewController isPopoverVisible]) {
-        [_optionsViewController release];
         _optionsViewController = nil;
     }
 }
@@ -100,10 +97,10 @@ static void *kRotationConstantContextKey = &kRotationConstantContextKey;
 - (void)toggleOptions:(id)sender
 {
     if (_optionsViewController == nil) {
-        BTSOptionsTableViewController *viewController = [[[BTSOptionsTableViewController alloc] initWithMagicOptions:_magicOptions] autorelease];
+        BTSOptionsTableViewController *viewController = [[BTSOptionsTableViewController alloc] initWithMagicOptions:_magicOptions];
         [[viewController navigationItem] setTitle:NSLocalizedString(@"Magic Finger Values", @"All Mutable Magic Values Popover Title.")];
         
-        UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
         _optionsViewController = [[UIPopoverController alloc] initWithContentViewController:navigationController];
         
         // we still want to interact with the touch view even when the popover displays

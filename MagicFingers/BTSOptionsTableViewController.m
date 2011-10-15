@@ -36,13 +36,6 @@
 
 static int kViewTag = 1;
 
-- (void)dealloc
-{
-    [_magicOptions release];
-    [_tableModel release];
-    
-    [super dealloc];
-}
 
 #pragma mark - View lifecycle
 
@@ -52,7 +45,7 @@ static int kViewTag = 1;
     
     _tableModel = [[NSMutableArray alloc] initWithCapacity:3];
 
-    NSNumberFormatter *numberFormatter = [[[NSNumberFormatter alloc] init] autorelease];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
     
     { // Emitter Instance Count
@@ -66,7 +59,6 @@ static int kViewTag = 1;
         [cellObjects setObject:slider forKey:@"view"];        
         
         [_tableModel addObject:cellObjects];
-        [cellObjects release];
     }
 
     { // Animation Duration
@@ -79,7 +71,6 @@ static int kViewTag = 1;
         [cellObjects setObject:slider forKey:@"view"];        
         
         [_tableModel addObject:cellObjects];
-        [cellObjects release];
     }
     
     { // Rotation Constant
@@ -92,7 +83,6 @@ static int kViewTag = 1;
         [cellObjects setObject:slider forKey:@"view"];        
         
         [_tableModel addObject:cellObjects];
-        [cellObjects release];
     }
 
     
@@ -101,7 +91,7 @@ static int kViewTag = 1;
 - (UISlider *)createSliderWithActionSelector:(SEL)selector minimumValue:(CGFloat)minimumValue maximumValue:(CGFloat)maximumValue initialValue:(CGFloat) initialValue
 {
     CGRect frame = CGRectMake(10.0, 12.0, 280.0, 7.0);
-    UISlider *slider = [[[UISlider alloc] initWithFrame:frame] autorelease];
+    UISlider *slider = [[UISlider alloc] initWithFrame:frame];
     [slider setTag:kViewTag];
     
     [slider addTarget:self action:selector forControlEvents:UIControlEventValueChanged];
@@ -117,7 +107,6 @@ static int kViewTag = 1;
 
 - (void)viewDidUnload
 {
-    [_tableModel release];
     _tableModel = nil;
     
     [super viewDidUnload];
@@ -153,7 +142,7 @@ static int kViewTag = 1;
         
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         } 
         
@@ -170,7 +159,7 @@ static int kViewTag = 1;
         
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         } else {
             UIView *viewToRemove = [[cell contentView] viewWithTag:1];

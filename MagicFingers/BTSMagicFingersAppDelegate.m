@@ -12,7 +12,7 @@
 
 @interface BTSMagicFingersAppDelegate() 
 
-@property (nonatomic, assign, readwrite) BTSMagicOptions *magicOptions;
+@property (nonatomic, strong, readwrite) BTSMagicOptions *magicOptions;
 @end
 
 @implementation BTSMagicFingersAppDelegate
@@ -27,16 +27,11 @@
     // listens for changes and updates the "magic fingers view".
     _magicOptions = [[BTSMagicOptions alloc] init];
        
-    BTSMagicFingersViewController *viewController = [[[BTSMagicFingersViewController alloc] initWithMagicOptions:_magicOptions] autorelease];
+    BTSMagicFingersViewController *viewController = [[BTSMagicFingersViewController alloc] initWithMagicOptions:_magicOptions];
     [_window setRootViewController:viewController];
     [_window makeKeyAndVisible];
     return YES;
 }
 
-- (void)dealloc
-{
-    [_window release];
-    [super dealloc];
-}
 
 @end

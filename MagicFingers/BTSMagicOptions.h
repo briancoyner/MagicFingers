@@ -15,10 +15,9 @@ extern NSString * const BTSMagicOptionsRotationConstantKey;
 
 @interface BTSMagicOptions : NSObject 
 
-@property (nonatomic, retain) id layerContent;
+@property (nonatomic, strong) id layerContent;
 @property (nonatomic, assign) NSInteger emitterInstanceCount;
 @property (nonatomic, assign) NSInteger rotationConstant;
 @property (nonatomic, assign) CGFloat animationDuration;
-
 
 @end

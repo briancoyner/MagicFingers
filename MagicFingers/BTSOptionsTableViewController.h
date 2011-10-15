@@ -12,7 +12,7 @@
 
 @interface BTSOptionsTableViewController : UITableViewController 
 
-@property (nonatomic, retain, readwrite) BTSMagicOptions *magicOptions;
+@property (nonatomic, strong, readwrite) BTSMagicOptions *magicOptions;
 
 - (id)initWithMagicOptions:(BTSMagicOptions *)magicOptions;
 

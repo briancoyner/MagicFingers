@@ -1,4 +1,4 @@
-# Magic Fingers App
+# Magic Fingers App (iOS 5 + ARC)
 ## Created by Brian Coyner
 
 ## App Details
@@ -12,9 +12,4 @@ fingers are down.
 - Core Animation (CAReplicatorLayer and CABasicAnimation) to spin a star image around each touch
 - Key Value Coding (KVC) and Key Value Observing (KVO)
 - UITableViewController with custom cells that control the BTSMagicOptions object.
-
-
-## Turning off the System Gestures
-You need to turn off the System Gestures in order to lay down 4 or more fingers. 
-  - Settings -> General -> Multitasking Gestures (OFF)
 
