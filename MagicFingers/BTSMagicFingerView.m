@@ -13,7 +13,6 @@
     CFMutableDictionaryRef _touchesToLayers;
 }
 
-- (CABasicAnimation *)createShapeLayerAnimation;
 @end
 
 @implementation BTSMagicFingerView
