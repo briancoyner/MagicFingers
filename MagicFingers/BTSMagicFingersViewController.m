@@ -44,11 +44,9 @@ static void *kRotationConstantContextKey = &kRotationConstantContextKey;
 
 - (void)dealloc 
 {
-    [_magicOptions removeObserver:self forKeyPath:BTSMagicOptionsEmitterInstanceCountKey];
-    [_magicOptions removeObserver:self forKeyPath:BTSMagicOptionsAnimationDurationKey];
-    [_magicOptions removeObserver:self forKeyPath:BTSMagicOptionsRotationConstantKey];
-  
-    
+    [_magicOptions removeObserver:self forKeyPath:BTSMagicOptionsEmitterInstanceCountKey context:kEmitterInstanceContextKey];
+    [_magicOptions removeObserver:self forKeyPath:BTSMagicOptionsAnimationDurationKey context:kAnimationDurationContextKey];
+    [_magicOptions removeObserver:self forKeyPath:BTSMagicOptionsRotationConstantKey context:kRotationConstantContextKey];
 }
 
 - (void)viewDidLoad
@@ -107,7 +105,7 @@ static void *kRotationConstantContextKey = &kRotationConstantContextKey;
         [_optionsViewController setPassthroughViews:[NSArray arrayWithObject:[self view]]];
         
         // TODO - remove the hard coded size in favor of a calculated size "that fits".
-        [_optionsViewController setPopoverContentSize:CGSizeMake(320, 380)];
+        [_optionsViewController setPopoverContentSize:CGSizeMake(320.0, 380.0)];
     }
         
     if ([_optionsViewController isPopoverVisible]) {

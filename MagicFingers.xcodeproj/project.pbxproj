@@ -152,7 +152,7 @@
 		5D81373513907EC8007DAE00 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Black Software, Inc.";
 			};
 			buildConfigurationList = 5D81373813907EC8007DAE00 /* Build configuration list for PBXProject "MagicFingers" */;

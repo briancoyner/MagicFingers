@@ -13,11 +13,6 @@
     NSMutableArray *_tableModel;
 }    
 
-- (void)emitterInstanceCountChanged:(id)sender;
-- (void)animationDurationChanged:(id)sender;
-- (void)rotationConstantChanged:(id)sender;
-- (UISlider *)createSliderWithActionSelector:(SEL)selector minimumValue:(CGFloat)minimumValue maximumValue:(CGFloat)maximumValue initialValue:(CGFloat) initialValue;
-
 @end
 
 @implementation BTSOptionsTableViewController
@@ -33,9 +28,7 @@
     return self;
 }
 
-
 static int kViewTag = 1;
-
 
 #pragma mark - View lifecycle
 
@@ -84,8 +77,6 @@ static int kViewTag = 1;
         
         [_tableModel addObject:cellObjects];
     }
-
-    
 }
 
 - (UISlider *)createSliderWithActionSelector:(SEL)selector minimumValue:(CGFloat)minimumValue maximumValue:(CGFloat)maximumValue initialValue:(CGFloat) initialValue
@@ -182,7 +173,7 @@ static int kViewTag = 1;
 - (void)emitterInstanceCountChanged:(id)sender
 {
     UISlider *slider = (UISlider *)sender;
-    [_magicOptions setEmitterInstanceCount:[slider value]];
+    [_magicOptions setEmitterInstanceCount:(NSInteger) [slider value]];
     [[self tableView] reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
 
@@ -196,7 +187,7 @@ static int kViewTag = 1;
 - (void)rotationConstantChanged:(id)sender
 {
     UISlider *slider = (UISlider *)sender;
-    [_magicOptions setRotationConstant:[slider value]];
+    [_magicOptions setRotationConstant:(NSInteger) [slider value]];
     [[self tableView] reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:2]] withRowAnimation:UITableViewRowAnimationNone];
 }
 

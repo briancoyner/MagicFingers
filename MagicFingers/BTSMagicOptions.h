@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const BTSMagicOptionsLayerContentKey;
 extern NSString * const BTSMagicOptionsEmitterInstanceCountKey;
 extern NSString * const BTSMagicOptionsAnimationDurationKey;
 extern NSString * const BTSMagicOptionsRotationConstantKey;

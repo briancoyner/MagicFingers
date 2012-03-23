@@ -49,10 +49,10 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
 
 - (void)dealloc
 {
-    [self removeObserver:self forKeyPath:@"layerContent"];
-    [self removeObserver:self forKeyPath:@"emitterInstanceCount"];
-    [self removeObserver:self forKeyPath:@"animationDuration"];
-    [self removeObserver:self forKeyPath:@"rotationConstant"];
+    [self removeObserver:self forKeyPath:@"layerContent" context:kLayerContentContextKey];
+    [self removeObserver:self forKeyPath:@"emitterInstanceCount" context:kEmitterInstanceCountContextKey];
+    [self removeObserver:self forKeyPath:@"animationDuration" context:kAnimationDurationContextKey];
+    [self removeObserver:self forKeyPath:@"rotationConstant" context:kRotationConstantContextKey];
     
     CFDictionaryRemoveAllValues(_touchesToLayers);
     CFRelease(_touchesToLayers);
@@ -72,7 +72,7 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
         [touchLayer setInstanceCount:_emitterInstanceCount];
         [touchLayer setInstanceDelay:_animationDuration / _emitterInstanceCount];
         
-        CATransform3D rotateTransform = CATransform3DMakeRotation(M_PI * _rotationConstant / [touchLayer instanceCount], 0, 0, 1);
+        CATransform3D rotateTransform = CATransform3DMakeRotation(((CGFloat)M_PI * _rotationConstant) / [touchLayer instanceCount], 0, 0, 1);
         [touchLayer setInstanceTransform:rotateTransform];
         
         [touchLayer setInstanceGreenOffset:-0.5/[touchLayer instanceCount]];
@@ -146,7 +146,7 @@ static void * kAnimationDurationContextKey = &kAnimationDurationContextKey;
         NSMutableDictionary *allTouches = (__bridge NSMutableDictionary *)_touchesToLayers;
         for (UITouch *touch in allTouches) {
             CAReplicatorLayer *touchLayer = (__bridge CAReplicatorLayer *)CFDictionaryGetValue(_touchesToLayers, (__bridge CFTypeRef)touch);
-            CATransform3D rotateTransform = CATransform3DMakeRotation(M_PI*_rotationConstant/[touchLayer instanceCount], 0, 0, 1);
+            CATransform3D rotateTransform = CATransform3DMakeRotation(((CGFloat)M_PI*_rotationConstant)/[touchLayer instanceCount], 0, 0, 1);
             [touchLayer setInstanceTransform:rotateTransform];
         }
         

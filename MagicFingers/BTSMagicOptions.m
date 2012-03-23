@@ -8,7 +8,6 @@
 
 #import "BTSMagicOptions.h"
 
-NSString * const BTSMagicOptionsLayerContentKey = @"layerContent";
 NSString * const BTSMagicOptionsEmitterInstanceCountKey = @"emitterInstanceCount";
 NSString * const BTSMagicOptionsAnimationDurationKey = @"animationDuration";
 NSString * const BTSMagicOptionsRotationConstantKey = @"rotationConstant";
@@ -23,7 +22,7 @@ NSString * const BTSMagicOptionsRotationConstantKey = @"rotationConstant";
 - (id)init {
     self = [super init];
     if (self) {
-        _layerContent = (id)[UIImage imageNamed:@"star.png"].CGImage;
+        _layerContent = (__bridge id)[UIImage imageNamed:@"star.png"].CGImage;
         _emitterInstanceCount = 70;
         _animationDuration = 1.0;
         _rotationConstant = 4;
