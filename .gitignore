@@ -12,3 +12,6 @@ ld/*
 xcuserdata
 profile
 *.moved-aside
+
+.idea
+.DS_Store
