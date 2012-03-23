@@ -1,4 +1,4 @@
-# Magic Fingers App (iOS 5)
+# Magic Fingers App (iOS 5.1, Xcode 4.3)
 ## Created by Brian Coyner
 
 ## App Details
